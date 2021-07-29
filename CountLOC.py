@@ -110,11 +110,11 @@ class LOCCounter:
                 Ssloc += ssloc
                 Scloc += scloc
 
-        print "\nTotal number of Python source files in this directory tree: %d" %self.FlCnt
-        print "Total comment lines in this tree: %d" % Scloc
-        print "Total source lines in this tree: %d" % Ssloc
-        print "Total empty lines in this directory tree: %d" % Snoloc
-        print "Total lines for Python code in this directory tree: %d" %(Ssloc + Scloc + Snoloc)
+        print("\nTotal number of Python source files in this directory tree: %d" %self.FlCnt)
+        print("Total comment lines in this tree: %d" % Scloc)
+        print("Total source lines in this tree: %d" % Ssloc)
+        print("Total empty lines in this directory tree: %d" % Snoloc)
+        print("Total lines for Python code in this directory tree: %d" %(Ssloc + Scloc + Snoloc))
 
 
     def GetSrcFiles(self, Path):
@@ -186,11 +186,11 @@ class LOCCounter:
                 Scloc += scloc
                 Snoloc += snoloc
 
-        print "\nTotal number of source files in this directory tree: %d" %self.FlCnt
-        print "Total source lines in this directory tree: %d" % Ssloc
-        print "Total comment lines in this directory tree: %d" % Scloc
-        print "Total empty lines in this directory tree: %d" % Snoloc
-        print "Total lines in this directory tree: %d\n" %(Ssloc + Scloc + Snoloc)
+        print("\nTotal number of source files in this directory tree: %d" %self.FlCnt)
+        print("Total source lines in this directory tree: %d" % Ssloc)
+        print("Total comment lines in this directory tree: %d" % Scloc)
+        print("Total empty lines in this directory tree: %d" % Snoloc)
+        print("Total lines in this directory tree: %d\n" %(Ssloc + Scloc + Snoloc))
 
     def GetHdrFilesLOC(self):
         Hsloc = 0
@@ -214,25 +214,25 @@ class LOCCounter:
                 Hcloc += hcloc
                 Hnoloc += hnoloc
 
-        print "\nTotal number of header files in this directory tree: %d" %self.FlCnt
-        print "Total source lines in this directory tree: %d" % Hsloc
-        print "Total comment lines in this directory tree: %d" % Hcloc
-        print "Total empty lines in this directory tree: %d" % Hnoloc
-        print "Total lines in this directory tree: %d\n" % (Hsloc + Hcloc + Hnoloc)
+        print("\nTotal number of header files in this directory tree: %d" %self.FlCnt)
+        print("Total source lines in this directory tree: %d" % Hsloc)
+        print("Total comment lines in this directory tree: %d" % Hcloc)
+        print("Total empty lines in this directory tree: %d" % Hnoloc)
+        print("Total lines in this directory tree: %d\n" % (Hsloc + Hcloc + Hnoloc))
 
     def GetTotalLOC(self):
         self.GetSrcFilesLOC()
         self.GetHdrFilesLOC()
 
 if __name__ == '__main__':
-    print "number of arguments: %d" % len(sys.argv)
+    print("number of arguments: %d" % len(sys.argv))
 
     for i in (sys.argv):
         print i
 
     if (len(sys.argv) < 2):
-        print "\nRequired arguments Missing"
-        print "Required arguments: RootPath, FileType(src, hdr, all, py)"
+        print("\nRequired arguments Missing")
+        print("Required arguments: RootPath, FileType(src, hdr, all, py)")
         sys.exit(2)
 
     # instantiate the line counter object
@@ -267,7 +267,7 @@ if __name__ == '__main__':
         lctr.GetTotalLOC()
 
     else:
-        print "Error: invalid FileType specifier (%s)" % (sys.argv[2])
+        print("Error: invalid FileType specifier (%s)" % (sys.argv[2]))
         sys.exit(2)
 
     sys.exit(0)
